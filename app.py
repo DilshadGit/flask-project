@@ -11,7 +11,7 @@ from flask import (
 from functools import wraps
 import sqlite3 
 
-
+# create the application instance 
 app = Flask(__name__)
 
 app.secret_key = 'hello flask'
@@ -47,7 +47,7 @@ def home():
 	# 	news.append(news_dict)
 	# 	print(news)
 	# news = [dict(title=row[0], content=row[1]) for row in cur.fetchall()]
-	print(news)
+	# print(news)
 	g.db.close()
 	return render_template('index.html', news=news)
 
