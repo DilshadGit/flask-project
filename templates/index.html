@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<h3>Welcome to Flask tutorials</h3>
+
+		<h4>News</h4>
+		{% for post in news %}
+			<h4>Title: {{post.title}}</h4>
+			<strong>Content: </strong>
+			<p class="lead text-justify">{{post.content}}</p>
+		{% endfor %}
+
+		<br>
+		<hr>
+		<p class='alert alert-link'>Click <a href="/logout" title=""> here </a>Logout</p>
+		{% for message in get_flashed_messages() %}
+			<p class=" alert alert-link">{{message}}</p>
+		{% endfor %}
+	</div>
+</body>
+</html>

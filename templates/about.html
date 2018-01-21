@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<h3>About me ....</h3>
+
+		{% for message in get_flashed_messages() %}
+			{{message}}
+		{% endfor %}
+		<br>
+		<a href="/" title="Home" class="btn-link">Home</a>
+	</div>
+	
+</body>
+</html>

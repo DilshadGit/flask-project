@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+	<h3>Login</h3>
+	<form action="" method="POST" accept-charset="utf-8" class="form">
+		<input type="text" name="username" placeholder="Username" value="{{request.form.username}}">
+		<input type="password" name="password" placeholder="password" value="{{request.form.password}}">
+		<input type="submit"  value="Login">
+	</form>
+	<br>
+
+	{% if error %}
+		<p class="alert alert-danger"><strong>Error: </strong>{{error}}</p>
+	{% endif %}
+
+	<br>
+
+	{% for message in get_flashed_messages() %}
+		<p class=" alert alert-link">{{message}}</p>
+	{% endfor %}
+	<br>
+
+	<a href="/" title="Home" class="btn-link">Home</a>
+</div>
+{% endblock %}
