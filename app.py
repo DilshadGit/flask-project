@@ -12,7 +12,8 @@ from functools import wraps
 import sqlite3 
 
 # create the application instance 
-app = Flask(__name__)
+# set the project root directory as the static folder, you can set others.
+app = Flask(__name__, static_url_path='/home/dilmac/DevOP/antonyenv/project/flask-project/static')
 
 app.secret_key = 'hello flask'
 app.database = 'flaskdb.db'
@@ -82,6 +83,12 @@ def logout():
 # create a function to connect the database sqlite3
 def connect_db():
 	return sqlite3.connect(app.database)
+
+
+
+@app.route('/')
+def root():
+    return app.send_static_file('index.html')
 
 
 
